@@ -1,4 +1,10 @@
+using Lista25.Models;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddDbContext<ListaWwwContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("ListaWWW")));
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
