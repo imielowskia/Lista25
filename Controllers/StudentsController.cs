@@ -47,7 +47,7 @@ namespace Lista25.Controllers
         // GET: Students/Create
         public IActionResult Create()
         {
-            ViewData["GrupaId"] = new SelectList(_context.Grupas, "Id", "Id");
+            ViewData["GrupaId"] = new SelectList(_context.Grupas, "Id", "Grupa1");
             return View();
         }
 
@@ -64,7 +64,7 @@ namespace Lista25.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["GrupaId"] = new SelectList(_context.Grupas, "Id", "Id", student.GrupaId);
+            ViewData["GrupaId"] = new SelectList(_context.Grupas, "Id", "Grupa1", student.GrupaId);
             return View(student);
         }
 
@@ -81,7 +81,7 @@ namespace Lista25.Controllers
             {
                 return NotFound();
             }
-            ViewData["GrupaId"] = new SelectList(_context.Grupas, "Id", "Id", student.GrupaId);
+            ViewData["GrupaId"] = new SelectList(_context.Grupas, "Id", "Grupa1", student.GrupaId);
             return View(student);
         }
 
@@ -117,7 +117,7 @@ namespace Lista25.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["GrupaId"] = new SelectList(_context.Grupas, "Id", "Id", student.GrupaId);
+            ViewData["GrupaId"] = new SelectList(_context.Grupas, "Id", "Grupa1", student.GrupaId);
             return View(student);
         }
 
